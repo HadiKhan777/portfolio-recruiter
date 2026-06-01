@@ -1,0 +1,966 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Abdul Hadi Khan — Systems Engineer</title>
+<meta name="description" content="Computer Engineering student building distributed systems, ML frameworks, and container runtimes from scratch. Open to backend, systems, and AI engineering roles.">
+<meta property="og:title" content="Abdul Hadi Khan — Systems Engineer">
+<meta property="og:description" content="19,312 ops/sec. 99.4% accuracy. 0 runtime dependencies. 9 projects built from scratch.">
+<meta property="og:url" content="https://hadikhan777.github.io/portfolio-recruiter/">
+<style>
+:root {
+  --bg:       #080808;
+  --surface:  #0f0f0f;
+  --surface2: #161616;
+  --border:   #1e1e1e;
+  --border2:  #2a2a2a;
+  --text:     #e2e2e2;
+  --muted:    #545454;
+  --dim:      #333333;
+  --accent:   #c8ff00;
+  --accent-dim: rgba(200,255,0,0.08);
+  --mono: 'JetBrains Mono','Fira Code','Cascadia Code','SF Mono','Consolas',monospace;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--mono);
+  font-size: 13.5px;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── Nav ── */
+nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2.5rem;
+  background: rgba(8,8,8,0.92);
+  border-bottom: 1px solid var(--border);
+  backdrop-filter: blur(12px);
+}
+
+.nav-name {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  color: var(--text);
+}
+
+.nav-name span { color: var(--accent); }
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  list-style: none;
+}
+
+.nav-links a {
+  font-size: 11px;
+  color: var(--muted);
+  text-decoration: none;
+  padding: 0.3rem 0.65rem;
+  border: 1px solid transparent;
+  letter-spacing: 0.04em;
+  transition: color 0.15s, border-color 0.15s;
+}
+
+.nav-links a:hover {
+  color: var(--accent);
+  border-color: var(--border2);
+}
+
+/* ── Sections ── */
+section {
+  padding: 5rem 2.5rem;
+  border-bottom: 1px solid var(--border);
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+section:last-of-type { border-bottom: none; }
+
+/* ── Hero ── */
+#hero {
+  padding-top: calc(52px + 4.5rem);
+  padding-bottom: 5rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: start;
+  max-width: 1280px;
+  margin: 0 auto;
+  border-bottom: 1px solid var(--border);
+}
+
+.hero-left { max-width: 560px; }
+
+.hero-eyebrow {
+  font-size: 10px;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 1.25rem;
+}
+
+.hero-name {
+  font-size: clamp(2.4rem, 4.5vw, 3.6rem);
+  font-weight: 800;
+  line-height: 0.95;
+  letter-spacing: -0.03em;
+  color: var(--text);
+  margin-bottom: 1.5rem;
+}
+
+.hero-role {
+  font-size: 13px;
+  color: var(--muted);
+  line-height: 1.7;
+  margin-bottom: 2rem;
+  max-width: 44ch;
+}
+
+.hero-role strong { color: var(--text); }
+
+.hero-links {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.btn {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--border2);
+  color: var(--muted);
+  cursor: pointer;
+  transition: all 0.15s;
+  background: transparent;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.btn:hover { color: var(--text); border-color: var(--accent); }
+
+.btn-primary {
+  background: var(--accent);
+  color: #000;
+  border-color: var(--accent);
+  font-weight: 700;
+}
+
+.btn-primary:hover { background: #d4ff33; border-color: #d4ff33; color: #000; }
+
+/* ── Stat cards ── */
+.hero-stats {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  background: var(--border);
+  border: 1px solid var(--border);
+}
+
+.stat-card {
+  background: var(--surface);
+  padding: 1.5rem 1.75rem;
+  position: relative;
+}
+
+.stat-card::before {
+  content: '';
+  position: absolute;
+  left: 0; top: 0; bottom: 0;
+  width: 2px;
+  background: var(--accent);
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+.stat-card:hover::before { opacity: 1; }
+
+.stat-val {
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--accent);
+  line-height: 1;
+  letter-spacing: -0.03em;
+  margin-bottom: 0.25rem;
+}
+
+.stat-label {
+  font-size: 11px;
+  color: var(--text);
+  letter-spacing: 0.04em;
+  margin-bottom: 0.2rem;
+}
+
+.stat-sub {
+  font-size: 10px;
+  color: var(--muted);
+  letter-spacing: 0.02em;
+}
+
+/* ── Section headers ── */
+.section-label {
+  font-size: 10px;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 2.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.section-label::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--border2);
+  max-width: 80px;
+}
+
+/* ── Projects ── */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 1px;
+  background: var(--border);
+  border: 1px solid var(--border);
+}
+
+.proj {
+  background: var(--surface);
+  padding: 1.75rem 2rem;
+  position: relative;
+  overflow: hidden;
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  transition: background 0.15s;
+  min-height: 220px;
+}
+
+.proj:hover { background: var(--surface2); }
+
+.proj::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 1px;
+  background: var(--accent);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.25s cubic-bezier(0.16,1,0.3,1);
+}
+
+.proj:hover::after { transform: scaleX(1); }
+
+.proj-featured { grid-column: span 7; }
+.proj-secondary { grid-column: span 5; }
+.proj-third { grid-column: span 4; }
+
+.proj-cat {
+  font-size: 9px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 0.6rem;
+}
+
+.proj-name {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 0.5rem;
+  letter-spacing: -0.01em;
+}
+
+.proj-desc {
+  font-size: 12px;
+  color: var(--muted);
+  line-height: 1.6;
+  margin-bottom: 1rem;
+  flex: 1;
+}
+
+.proj-claim {
+  font-size: 11px;
+  color: var(--text);
+  background: var(--accent-dim);
+  border: 1px solid rgba(200,255,0,0.15);
+  padding: 0.35rem 0.65rem;
+  margin-bottom: 1rem;
+  line-height: 1.5;
+}
+
+.proj-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+  margin-top: auto;
+}
+
+.tag {
+  font-size: 9.5px;
+  padding: 0.2rem 0.5rem;
+  border: 1px solid var(--border2);
+  color: var(--dim);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.proj-arrow {
+  position: absolute;
+  bottom: 1.25rem;
+  right: 1.25rem;
+  font-size: 14px;
+  color: var(--dim);
+  transition: color 0.15s, transform 0.15s;
+}
+
+.proj:hover .proj-arrow {
+  color: var(--accent);
+  transform: translate(2px, -2px);
+}
+
+/* ── Experience ── */
+.exp-timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  border: 1px solid var(--border);
+}
+
+.exp-item {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 2rem;
+  padding: 2rem 2.25rem;
+  border-bottom: 1px solid var(--border);
+  transition: background 0.15s;
+}
+
+.exp-item:last-child { border-bottom: none; }
+.exp-item:hover { background: var(--surface); }
+
+.exp-meta { padding-top: 0.1rem; }
+
+.exp-dates {
+  font-size: 10px;
+  color: var(--accent);
+  letter-spacing: 0.08em;
+  margin-bottom: 0.3rem;
+  text-transform: uppercase;
+}
+
+.exp-company {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 0.15rem;
+}
+
+.exp-location {
+  font-size: 10px;
+  color: var(--muted);
+  letter-spacing: 0.04em;
+}
+
+.exp-body {}
+
+.exp-role {
+  font-size: 13.5px;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 0.75rem;
+  letter-spacing: -0.01em;
+}
+
+.exp-highlight {
+  display: inline-block;
+  font-size: 10px;
+  color: var(--accent);
+  background: var(--accent-dim);
+  border: 1px solid rgba(200,255,0,0.2);
+  padding: 0.15rem 0.5rem;
+  margin-bottom: 0.85rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.exp-bullets {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.exp-bullets li {
+  font-size: 12px;
+  color: var(--muted);
+  line-height: 1.6;
+  padding-left: 1rem;
+  position: relative;
+}
+
+.exp-bullets li::before {
+  content: '·';
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+}
+
+/* ── Skills ── */
+.skills-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1px;
+  background: var(--border);
+  border: 1px solid var(--border);
+}
+
+.skill-group {
+  background: var(--surface);
+  padding: 1.5rem 1.75rem;
+  display: grid;
+  grid-template-columns: 100px 1fr;
+  gap: 1.25rem;
+  align-items: start;
+  transition: background 0.15s;
+}
+
+.skill-group:hover { background: var(--surface2); }
+
+.skill-cat {
+  font-size: 9.5px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--accent);
+  padding-top: 0.1rem;
+  white-space: nowrap;
+}
+
+.skill-items {
+  font-size: 12px;
+  color: var(--muted);
+  line-height: 1.8;
+}
+
+.skill-items strong { color: var(--text); font-weight: 600; }
+
+/* ── Contact ── */
+#contact {
+  border-bottom: none;
+  padding-bottom: 6rem;
+}
+
+.contact-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: end;
+}
+
+.contact-heading {
+  font-size: clamp(1.6rem, 3vw, 2.4rem);
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  color: var(--text);
+  margin-bottom: 1rem;
+}
+
+.contact-heading span { color: var(--accent); }
+
+.contact-sub {
+  font-size: 12px;
+  color: var(--muted);
+  line-height: 1.7;
+  max-width: 42ch;
+}
+
+.contact-links {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  background: var(--border);
+  border: 1px solid var(--border);
+}
+
+.contact-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 1.25rem;
+  background: var(--surface);
+  text-decoration: none;
+  color: var(--muted);
+  font-size: 12px;
+  letter-spacing: 0.03em;
+  transition: background 0.15s, color 0.15s;
+}
+
+.contact-row:hover { background: var(--surface2); color: var(--text); }
+.contact-row:hover .cr-arrow { color: var(--accent); transform: translate(2px,-2px); }
+
+.cr-label { font-size: 9px; color: var(--accent); letter-spacing: 0.2em; text-transform: uppercase; }
+.cr-arrow { color: var(--dim); transition: color 0.15s, transform 0.15s; }
+
+/* ── Footer ── */
+footer {
+  padding: 1.5rem 2.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid var(--border);
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+footer p { font-size: 10.5px; color: var(--dim); letter-spacing: 0.06em; }
+
+/* ── Scroll reveal ── */
+.reveal {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.55s ease, transform 0.55s ease;
+}
+
+.reveal.in { opacity: 1; transform: none; }
+
+/* ── Reduced motion ── */
+@media (prefers-reduced-motion: reduce) {
+  .reveal { opacity: 1; transform: none; transition: none; }
+  .proj::after { transition: none; }
+}
+
+/* ── Mobile ── */
+@media (max-width: 900px) {
+  nav { padding: 0 1.25rem; }
+  .nav-name { display: none; }
+
+  #hero {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+    padding: calc(52px + 2.5rem) 1.25rem 3rem;
+  }
+
+  section { padding: 3rem 1.25rem; }
+
+  .hero-stats { flex-direction: row; flex-wrap: wrap; }
+
+  .projects-grid { grid-template-columns: 1fr; }
+  .proj-featured, .proj-secondary, .proj-third { grid-column: span 1; }
+
+  .exp-item { grid-template-columns: 1fr; gap: 0.75rem; }
+
+  .skills-grid { grid-template-columns: 1fr; }
+  .skill-group { grid-template-columns: 80px 1fr; }
+
+  .contact-inner { grid-template-columns: 1fr; gap: 2.5rem; }
+
+  footer { flex-direction: column; gap: 0.5rem; text-align: center; }
+}
+</style>
+</head>
+<body>
+
+<!-- ── Nav ── -->
+<nav>
+  <span class="nav-name"><span>HadiKhan</span> / systems engineer</span>
+  <ul class="nav-links">
+    <li><a href="#projects">work</a></li>
+    <li><a href="#experience">experience</a></li>
+    <li><a href="#skills">skills</a></li>
+    <li><a href="https://github.com/HadiKhan777" target="_blank" rel="noopener">github</a></li>
+    <li><a href="https://linkedin.com/in/abdul-hadi-khan-52b642276" target="_blank" rel="noopener">linkedin</a></li>
+    <li><a href="#contact" class="btn btn-primary" style="border:none;font-size:10.5px;padding:.28rem .7rem;">contact</a></li>
+  </ul>
+</nav>
+
+<!-- ── Hero ── -->
+<div id="hero">
+  <div class="hero-left">
+    <div class="hero-eyebrow">pre-accepted MSc · Sapienza Rome 2026-27 · open to roles</div>
+    <h1 class="hero-name">Abdul<br>Hadi Khan</h1>
+    <p class="hero-role">
+      <strong>Systems engineer</strong> who reads specs and writes implementations.
+      Nine projects built from scratch — TCP servers, neural network frameworks,
+      container runtimes, and a git clone — without wrapping a library.
+    </p>
+    <div class="hero-links">
+      <a href="https://github.com/HadiKhan777" target="_blank" rel="noopener" class="btn">github.com/HadiKhan777 ↗</a>
+      <!-- RESUME_DOWNLOAD_LINK -->
+      <a href="#" class="btn btn-primary">download cv</a>
+    </div>
+  </div>
+
+  <div class="hero-stats">
+    <div class="stat-card">
+      <div class="stat-val">19,312</div>
+      <div class="stat-label">ops/sec on PING</div>
+      <div class="stat-sub">custom TCP protocol, pipeline=64, 5-replica fan-out</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-val">99.4%</div>
+      <div class="stat-label">validation accuracy</div>
+      <div class="stat-sub">NumPy only — no PyTorch, no TensorFlow, no sklearn</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-val">0</div>
+      <div class="stat-label">runtime dependencies</div>
+      <div class="stat-sub">across 9 shipped projects</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-val">9</div>
+      <div class="stat-label">projects shipped</div>
+      <div class="stat-sub">distributed systems · ML · containers · AI</div>
+    </div>
+  </div>
+</div>
+
+<!-- ── Projects ── -->
+<section id="projects">
+  <div class="section-label reveal">Selected work</div>
+
+  <div class="projects-grid">
+
+    <!-- NEXUS Dominion — featured -->
+    <a href="https://github.com/HadiKhan777/nexus-dominion" target="_blank" rel="noopener" class="proj proj-featured reveal">
+      <div class="proj-cat">AI / Systems</div>
+      <div class="proj-name">NEXUS Dominion</div>
+      <div class="proj-desc">Personal AI operating system running entirely locally. Full-screen terminal cockpit with 13 LLM providers, 5-agent swarm, RAG over 9,800+ documents, live neural training, and Obsidian knowledge graph in 3D.</div>
+      <div class="proj-claim">TF-IDF RAG from scratch · multi-provider routing with fallback · Obsidian as persistent memory layer</div>
+      <div class="proj-tags">
+        <span class="tag">Python</span>
+        <span class="tag">Groq</span>
+        <span class="tag">Cerebras</span>
+        <span class="tag">Three.js</span>
+        <span class="tag">WebSocket</span>
+        <span class="tag">OpenCV</span>
+      </div>
+      <span class="proj-arrow">↗</span>
+    </a>
+
+    <!-- distkv -->
+    <a href="https://github.com/HadiKhan777/distkv" target="_blank" rel="noopener" class="proj proj-secondary reveal">
+      <div class="proj-cat">Distributed Systems</div>
+      <div class="proj-name">distkv</div>
+      <div class="proj-desc">Distributed key-value store with a custom TCP protocol, write-ahead log, and streaming replication. Redis-compatible command surface with no Redis dependency.</div>
+      <div class="proj-claim">WAL with O_DSYNC · async replication fan-out · SIGKILL-9 crash recovery tested</div>
+      <div class="proj-tags">
+        <span class="tag">Node.js</span>
+        <span class="tag">TCP</span>
+        <span class="tag">WAL</span>
+        <span class="tag">Replication</span>
+      </div>
+      <span class="proj-arrow">↗</span>
+    </a>
+
+    <!-- neuralkit -->
+    <a href="https://github.com/HadiKhan777/neuralkit" target="_blank" rel="noopener" class="proj proj-third reveal">
+      <div class="proj-cat">Machine Learning</div>
+      <div class="proj-name">neuralkit</div>
+      <div class="proj-desc">Neural network framework. Backprop, BatchNorm, GELU, AdamW, cosine LR. Every derivative written by hand.</div>
+      <div class="proj-claim">Full 3-term BatchNorm backward pass · AdamW decoupled weight decay · 99.4% on spiral</div>
+      <div class="proj-tags">
+        <span class="tag">Python</span>
+        <span class="tag">NumPy</span>
+        <span class="tag">GELU</span>
+        <span class="tag">AdamW</span>
+      </div>
+      <span class="proj-arrow">↗</span>
+    </a>
+
+    <!-- nanohttp -->
+    <a href="https://github.com/HadiKhan777/nanohttp" target="_blank" rel="noopener" class="proj proj-third reveal">
+      <div class="proj-cat">Networking</div>
+      <div class="proj-name">nanohttp</div>
+      <div class="proj-desc">HTTP/1.1 server with WebSocket (RFC 6455), JWT HS256, SSE, and gzip. Built on net.createServer with no http module.</div>
+      <div class="proj-claim">RFC 6455 frame encoder/decoder · HMAC-SHA256 JWT with timing-safe compare · gzip via zlib</div>
+      <div class="proj-tags">
+        <span class="tag">Node.js</span>
+        <span class="tag">RFC 6455</span>
+        <span class="tag">JWT</span>
+        <span class="tag">SSE</span>
+      </div>
+      <span class="proj-arrow">↗</span>
+    </a>
+
+    <!-- kontainer -->
+    <a href="https://github.com/HadiKhan777/kontainer" target="_blank" rel="noopener" class="proj proj-third reveal">
+      <div class="proj-cat">Infrastructure</div>
+      <div class="proj-name">kontainer</div>
+      <div class="proj-desc">Container runtime using Linux user/PID/mount/UTS/IPC namespaces and cgroup v2. No Docker. No root required.</div>
+      <div class="proj-claim">unshare --map-root-user · cgroup v2 memory.max + cpu.max · rootfs from ldd-resolved binaries</div>
+      <div class="proj-tags">
+        <span class="tag">Node.js</span>
+        <span class="tag">Linux</span>
+        <span class="tag">Namespaces</span>
+        <span class="tag">cgroup v2</span>
+      </div>
+      <span class="proj-arrow">↗</span>
+    </a>
+
+    <!-- gitlet -->
+    <a href="https://github.com/HadiKhan777/gitlet" target="_blank" rel="noopener" class="proj proj-third reveal">
+      <div class="proj-cat">Developer Tools</div>
+      <div class="proj-name">gitlet</div>
+      <div class="proj-desc">Git implementation: SHA-256 content-addressable store, nested trees, 3-way merge with conflict markers, LCS unified diff, stash, tags, reset.</div>
+      <div class="proj-claim">BFS ancestor search for fast-forward detection · LCS DP table for diff · multi-parent merge commits</div>
+      <div class="proj-tags">
+        <span class="tag">Node.js</span>
+        <span class="tag">SHA-256</span>
+        <span class="tag">LCS</span>
+        <span class="tag">3-way merge</span>
+      </div>
+      <span class="proj-arrow">↗</span>
+    </a>
+
+    <!-- pipecraft -->
+    <a href="https://github.com/HadiKhan777/pipecraft" target="_blank" rel="noopener" class="proj proj-third reveal">
+      <div class="proj-cat">DevOps</div>
+      <div class="proj-name">pipecraft</div>
+      <div class="proj-desc">CI/CD pipeline engine with parallel jobs, topological dependency resolution, retry with exponential backoff, artifacts, and a live TUI.</div>
+      <div class="proj-claim">BFS toposort into execution waves · Promise.all fan-out · webhook server on :3141</div>
+      <div class="proj-tags">
+        <span class="tag">Node.js</span>
+        <span class="tag">Parallel</span>
+        <span class="tag">Toposort</span>
+        <span class="tag">Artifacts</span>
+      </div>
+      <span class="proj-arrow">↗</span>
+    </a>
+
+    <!-- tui -->
+    <a href="https://github.com/HadiKhan777/tui" target="_blank" rel="noopener" class="proj proj-third reveal">
+      <div class="proj-cat">Systems</div>
+      <div class="proj-name">tui</div>
+      <div class="proj-desc">Terminal UI framework on raw ANSI escape codes. 30fps render loop, FocusManager, ScrollList, Tabs, Input widget.</div>
+      <div class="proj-claim">Raw ANSI escape codes · setRawMode stdin · 20fps delta-render · evdev uinput cursor control</div>
+      <div class="proj-tags">
+        <span class="tag">Node.js</span>
+        <span class="tag">ANSI</span>
+        <span class="tag">30fps</span>
+        <span class="tag">evdev</span>
+      </div>
+      <span class="proj-arrow">↗</span>
+    </a>
+
+    <!-- portfolio (full width) -->
+    <a href="https://hadikhan777.github.io/portfolio/" target="_blank" rel="noopener" class="proj reveal" style="grid-column:span 6;">
+      <div class="proj-cat">Frontend</div>
+      <div class="proj-name">Portfolio &amp; Singularity</div>
+      <div class="proj-desc">3D portfolio with custom GLSL plasma shader, 80,000 particles, UnrealBloom post-processing, and live Obsidian knowledge graph visualization. WebSocket-connected to NEXUS for live data.</div>
+      <div class="proj-claim">FBM noise fragment shader · WebSocket live data bridge · Three.js r160 ES modules</div>
+      <div class="proj-tags">
+        <span class="tag">Three.js</span>
+        <span class="tag">GLSL</span>
+        <span class="tag">WebGL</span>
+        <span class="tag">WebSocket</span>
+      </div>
+      <span class="proj-arrow">↗</span>
+    </a>
+
+    <a href="https://github.com/HadiKhan777" target="_blank" rel="noopener" class="proj reveal" style="grid-column:span 6; justify-content:center; align-items:center; min-height:160px;">
+      <div style="text-align:center;">
+        <div style="font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin-bottom:.5rem;">all repositories</div>
+        <div style="font-size:1rem;font-weight:700;color:var(--text);">github.com/HadiKhan777</div>
+        <div style="font-size:11px;color:var(--muted);margin-top:.3rem;">9 projects · all public</div>
+      </div>
+      <span class="proj-arrow">↗</span>
+    </a>
+
+  </div>
+</section>
+
+<!-- ── Experience ── -->
+<section id="experience">
+  <div class="section-label reveal">Experience</div>
+
+  <div class="exp-timeline">
+
+    <div class="exp-item reveal">
+      <div class="exp-meta">
+        <div class="exp-dates">Jul – Sep 2025</div>
+        <div class="exp-company">Stewart Pakistan</div>
+        <div class="exp-location">Lahore, PK (US firm)</div>
+      </div>
+      <div class="exp-body">
+        <div class="exp-role">Trainee IT Programmer Analyst</div>
+        <div class="exp-highlight">Selected into elite Jarvis R&amp;D Team</div>
+        <ul class="exp-bullets">
+          <li>Built Employee Offboarding Portal with Microsoft Power Platform (Power Apps, Power Automate, Copilot Studio) — proposal accepted by US management</li>
+          <li>Contributed to Claim Management System and SLS Client Onboarding Portal using ASP.NET Core, C#, and Angular</li>
+          <li>Researched AI model selection, hallucination mitigation, and prompt security; supported internal AI-powered SQL query generator</li>
+          <li>Earned 15+ certifications including Azure AI-900, .NET Fundamentals, GitHub Foundations, and Building AI Products</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="exp-item reveal">
+      <div class="exp-meta">
+        <div class="exp-dates">Jul – Aug 2025</div>
+        <div class="exp-company">InfoTech Group</div>
+        <div class="exp-location">Lahore, PK</div>
+      </div>
+      <div class="exp-body">
+        <div class="exp-role">React Developer Intern</div>
+        <ul class="exp-bullets">
+          <li>Built reusable React component library integrated with live REST APIs, eliminating redundant code across three product pages</li>
+          <li>Delivered Task Manager app with Redux state management as final project over four-week sprint</li>
+          <li>Progressed from fundamentals to React Router, Axios, React Hook Form, and Redux in 20 working days</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="exp-item reveal">
+      <div class="exp-meta">
+        <div class="exp-dates">Jan 2026</div>
+        <div class="exp-company">Generix Solutions</div>
+        <div class="exp-location">Remote</div>
+      </div>
+      <div class="exp-body">
+        <div class="exp-role">Software Engineering Intern</div>
+        <ul class="exp-bullets">
+          <li>Built CLI Log Parser in Rust with real-time severity filtering and statistical bar charts</li>
+          <li>Co-developed System Monitor Pro as final group project — Rust/Actix-Web backend serving live CPU/memory/disk metrics via REST; Python/Flask frontend with 7 tabs and SVG gauges</li>
+          <li>Delivered CSV data validator with regex format checking, duplicate detection, and detailed issue reporting in Python</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ── Skills ── -->
+<section id="skills">
+  <div class="section-label reveal">Skills</div>
+
+  <div class="skills-grid">
+    <div class="skill-group reveal">
+      <div class="skill-cat">Languages</div>
+      <div class="skill-items">
+        <strong>Python</strong> · <strong>Rust</strong> · <strong>JavaScript</strong> · <strong>TypeScript</strong> · Kotlin · Java · C · C++ · C#
+      </div>
+    </div>
+    <div class="skill-group reveal">
+      <div class="skill-cat">Systems</div>
+      <div class="skill-items">
+        TCP sockets · <strong>WAL / crash recovery</strong> · <strong>Linux namespaces</strong> · cgroup v2 · chroot · ANSI terminals · evdev/uinput
+      </div>
+    </div>
+    <div class="skill-group reveal">
+      <div class="skill-cat">ML / AI</div>
+      <div class="skill-items">
+        <strong>Backpropagation</strong> · BatchNorm · GELU · <strong>AdamW</strong> · cosine LR · <strong>RAG / TF-IDF</strong> · multi-agent swarms · LLM routing
+      </div>
+    </div>
+    <div class="skill-group reveal">
+      <div class="skill-cat">Protocols</div>
+      <div class="skill-items">
+        <strong>HTTP/1.1</strong> · <strong>WebSocket RFC 6455</strong> · JWT HS256 · SSE · RESP · content-addressable storage · LCS diff
+      </div>
+    </div>
+    <div class="skill-group reveal">
+      <div class="skill-cat">Frontend</div>
+      <div class="skill-items">
+        React · Redux · React Router · Three.js · <strong>GLSL shaders</strong> · WebGL · Framer Motion · Tailwind
+      </div>
+    </div>
+    <div class="skill-group reveal">
+      <div class="skill-cat">Infrastructure</div>
+      <div class="skill-items">
+        Linux · Git internals · <strong>container runtimes</strong> · CI/CD · GitHub Actions · Docker concepts · REST API design
+      </div>
+    </div>
+    <div class="skill-group reveal">
+      <div class="skill-cat">Enterprise</div>
+      <div class="skill-items">
+        ASP.NET Core · Angular · <strong>Azure AI</strong> · Microsoft Power Platform · Power Automate · Copilot Studio · Supabase
+      </div>
+    </div>
+    <div class="skill-group reveal">
+      <div class="skill-cat">Certifications</div>
+      <div class="skill-items">
+        Azure AI-900 · Power Platform · GitHub Foundations · .NET Fundamentals · Deep Learning (Illinois Tech) · Gen AI (Amazon) · Cybersecurity (Microsoft) · 19 total
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Contact ── -->
+<section id="contact">
+  <div class="section-label reveal">Contact</div>
+  <div class="contact-inner">
+    <div>
+      <h2 class="contact-heading reveal">Open to<br><span>strong teams.</span></h2>
+      <p class="contact-sub reveal">Backend, systems, AI engineering, or full-stack roles. Currently based in Istanbul — open to relocation or remote. Graduating 2026 · Pre-accepted: MSc CS &amp; AI, Sapienza University of Rome (2026-2027).</p>
+    </div>
+    <div class="contact-links reveal">
+      <a href="mailto:hadikhan2003@gmail.com" class="contact-row">
+        <div>
+          <div class="cr-label">Email</div>
+          <div>hadikhan2003@gmail.com</div>
+        </div>
+        <span class="cr-arrow">↗</span>
+      </a>
+      <a href="https://linkedin.com/in/abdul-hadi-khan-52b642276" target="_blank" rel="noopener" class="contact-row">
+        <div>
+          <div class="cr-label">LinkedIn</div>
+          <div>linkedin.com/in/abdul-hadi-khan-52b642276</div>
+        </div>
+        <span class="cr-arrow">↗</span>
+      </a>
+      <a href="https://github.com/HadiKhan777" target="_blank" rel="noopener" class="contact-row">
+        <div>
+          <div class="cr-label">GitHub</div>
+          <div>github.com/HadiKhan777</div>
+        </div>
+        <span class="cr-arrow">↗</span>
+      </a>
+      <div class="contact-row" style="cursor:default;">
+        <div>
+          <div class="cr-label">Phone</div>
+          <div>+90 501 637 2411</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>Abdul Hadi Khan &nbsp;/&nbsp; Istanbul, Turkey &nbsp;/&nbsp; Computer Engineering 2026</p>
+  <p>hadikhan777.github.io/portfolio-recruiter</p>
+</footer>
+
+<script>
+const observer = new IntersectionObserver(
+  entries => entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('in'); }),
+  { threshold: 0.1 }
+);
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
